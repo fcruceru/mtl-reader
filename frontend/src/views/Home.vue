@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <router-link to="/series"><h2>Series</h2></router-link>
+    <router-link :to="{ name: 'Series' }"><h2>Series</h2></router-link>
   </div>
 </template>
 
