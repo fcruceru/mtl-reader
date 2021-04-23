@@ -15,9 +15,9 @@ app.get('/', (req, res) => {
     res.send('Working Connection')
 })
 
-app.get('/chapter-list', (req, res) => {
+app.get('/chapter-list', async (req, res) => {
     let series = req.query.series;
-    let chapterList = scrapeChapterList(series);
+    let chapterList = await scrapeChapterList(series);
 
     res.send(chapterList);
 })
