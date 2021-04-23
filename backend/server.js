@@ -1,6 +1,10 @@
-const express = require('express');
+// Express
+import express from 'express';
 const app = express();
 const port = 3000;
+
+// Utils
+import { scrapeChapterList } from "./scrape.js";
 
 app.get('/', (req, res) => {
     res.send('Working Connection')
@@ -8,8 +12,9 @@ app.get('/', (req, res) => {
 
 app.get('/chapter-list', (req, res) => {
     let series = req.query.series;
-
-    res.send(series);
+    let chapterList = scrapeChapterList(series);
+    
+    res.send(chapterList);
 })
 
 app.listen(port, () => {
