@@ -20,7 +20,7 @@ export default {
 		$route(to) {
 			let current = to.fullPath;
 			// Formatting nicely
-			current = current.substring(1);
+			current = current.substring(1); //hi hello
 
 			this.currentPlace = current;
 		}
