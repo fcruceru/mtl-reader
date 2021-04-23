@@ -17,7 +17,8 @@ app.get('/', (req, res) => {
 
 app.get('/chapter-list', async (req, res) => {
     let series = req.query.series;
-    let chapterList = await scrapeChapterList(series);
+    let page = req.query.page;
+    let chapterList = await scrapeChapterList(series, page);
 
     res.send(chapterList);
 })
