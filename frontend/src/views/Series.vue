@@ -7,5 +7,7 @@
 
 export default {
 	name: "Series",
+	mounted() {
+	}
 };
 </script>
