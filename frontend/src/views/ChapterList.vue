@@ -13,18 +13,19 @@
 </template>
 
 <script>
+import { getChapterList } from "../utils/api";
+
 export default {
 	name: "ChapterList",
 	components: {},
 	data() {
 		return {
-			chapters: [
-				{
-					index: 1,
-					title: "Title one",
-				},
-			],
+			chapters: [],
 		};
+	},
+	async mounted() {
+		let chapterList = (await getChapterList(this.$route.params.name)).data;
+		this.chapters = chapterList;
 	},
 };
 </script>
