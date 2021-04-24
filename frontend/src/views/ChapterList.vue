@@ -8,7 +8,7 @@
 							'/series/' +
 							$route.params.name +
 							'/' +
-							chapter.title,
+							chapter.index,
 					}"
 				>
 					{{ chapter.title }}
@@ -43,3 +43,9 @@ export default {
 	},
 };
 </script>
+
+<style scoped>
+li a {
+	color: white;
+}
+</style>
